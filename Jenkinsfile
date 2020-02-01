@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd  /var/lib/jenkins/workspace/DokcerPipeline2/examples/feed-combiner-java8-webapp'
+               dir("${env.WORKSPACE}/examples/feed-combiner-java8-webapp")
                 sh 'mvn -B -DskipTests clean package'
             }
         }
